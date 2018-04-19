@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Thu Apr 19 13:41:01 2018
-#  Last Modified : <180419.1349>
+#  Last Modified : <180419.1552>
 #
 #  Description	
 #
@@ -65,6 +65,6 @@ $(PDF) : $(SRCTEX) $(BIBLIO) $(SRCFIGS)
 	   done
 	   
 clean:
-	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out $(PDF)
+	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out *.bbl *.blg *.brf *.lo? $(PDF)
 
 	
