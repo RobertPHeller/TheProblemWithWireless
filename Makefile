@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Thu Apr 19 13:41:01 2018
-#  Last Modified : <180420.0903>
+#  Last Modified : <180419.1552>
 #
 #  Description	
 #
@@ -54,10 +54,10 @@ SRCFIGS  =
 
 $(PDF) : $(SRCTEX) $(BIBLIO) $(SRCFIGS)
 	$(PDFLATEX) $(DOCUMENT).tex
-	$(BIBTEX) $(DOCUMENT).aux
+	-$(BIBTEX) $(DOCUMENT).aux
 	$(PDFLATEX) $(DOCUMENT).tex
-	latex_count=5 ; \
-	while egrep -s 'Rerun to get cross-references right' $(DOCUMENT).log && [ $$latex_count -gt 0 ] ;\
+	-$(BIBTEX) $(DOCUMENT).aux
+	while egrep -s 'Rerun (LaTeX|to get cross-references right)' $(DOCUMENT).log && [ $$latex_count -gt 0 ] ;\
 	   do \
 	     echo "Rerunning latex...." ;\
 	     $(PDFLATEX) $(DOCUMENT).tex ;\
